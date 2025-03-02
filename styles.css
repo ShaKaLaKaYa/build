@@ -12,9 +12,10 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
+    align-items: center;
+    justify-content: flex-start; /* Center content vertically at the top */
     min-height: 100vh;
+    padding-top: 80px; /* To avoid overlap with fixed header */
 }
 
 /* Header */
@@ -29,18 +30,19 @@ body {
     width: 100%;
     z-index: 1000;
     padding: 1rem 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo Container (First Line) */
+/* Logo Container */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between logo and text */
-    margin-bottom: 10px; /* Space between logo and nav */
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 .logo-container img {
-    height: 50px; /* Adjust logo size */
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
@@ -52,11 +54,10 @@ body {
     margin: 0;
 }
 
-/* Navigation Bar (Second Line) */
+/* Navigation Bar */
 .nav {
     width: 100%;
     text-align: center;
-    margin: 20px 0px
 }
 
 .nav ul {
@@ -82,7 +83,6 @@ body {
     color: #6f5eff;
 }
 
-
 /* Main Content */
 .main {
     flex: 1;
@@ -90,13 +90,13 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding-top: 120px; /* Adjust padding to avoid overlap with the fixed header */
 }
 
 /* Centered Carousel */
 .carousel {
     position: relative;
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     height: 600px;
     overflow: hidden;
     border-radius: 10px;
@@ -109,7 +109,7 @@ body {
 .carousel-images {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 300%; /* Ensure it fits all images */
+    width: 300%;
 }
 
 .carousel-images img {
@@ -146,14 +146,14 @@ button:hover {
 
 /* Footer */
 .footer {
-    background-color: #f9f9f9; /* Keeping the original background color */
-    color: #333; /* Dark text for readability */
-    padding: 60px 0; /* Increased padding for more space */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elegant font */
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 60px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
     margin-top: auto;
     width: 100%;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted look */
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Footer Container */
@@ -167,32 +167,32 @@ button:hover {
 .container h4 {
     font-size: 1rem;
     font-weight: bold;
-    color: #333; /* Dark text for headings */
-    margin-bottom: 20px; /* Space between heading and paragraph */
+    color: #333;
+    margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 2px; /* Spacing between letters for a stylish look */
+    letter-spacing: 2px;
 }
 
 .container p {
     font-size: 0.8rem;
     line-height: 1.8;
-    color: #555; /* Slightly lighter gray text for paragraph */
+    color: #555;
     margin-bottom: 30px;
 }
 
 /* Footer Navigation Links */
 .nav ul li a {
     font-size: 1rem;
-    color: #555; /* Lighter gray for links */
+    color: #555;
     text-decoration: none;
     padding: 8px 15px;
-    border-radius: 20px; /* Rounded corners for a soft feel */
-    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 20px;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .nav ul li a:hover {
-    color: #fff; /* Text color on hover */
-    background-color: #6f5eff; /* Subtle background change on hover */
+    color: #fff;
+    background-color: #6f5eff;
 }
 
 /* Footer Social Media Links */
@@ -208,21 +208,98 @@ button:hover {
 }
 
 .social-media a:hover {
-    color: #6f5eff; /* Hover effect for social media icons */
+    color: #6f5eff;
 }
 
-/* Responsive Design for Footer */
+/* Responsive Design for Footer and Header on Smaller Screens */
 @media (max-width: 768px) {
+    /* Header */
+    .logo-container {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .logo-container img {
+        height: 40px;
+    }
+    .logo-container h2 {
+        font-size: 1.2rem;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav ul li a {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    /* Carousel */
+    .carousel {
+        height: 400px;
+    }
+
+    .carousel-images img {
+        height: 400px;
+    }
+
+    /* Footer */
     .footer {
         padding: 40px 0;
     }
+
     .container {
         padding: 0 10px;
     }
+
     .container h4 {
         font-size: 1.2rem;
     }
+
     .container p {
         font-size: 0.9rem;
+    }
+}
+
+/* Responsive Design for iPhone and Smaller Devices */
+@media (max-width: 480px) {
+    body {
+        padding-top: 120px; /* To avoid overlap with fixed header on small screens */
+    }
+
+    .logo-container img {
+        height: 30px;
+    }
+
+    .logo-container h2 {
+        font-size: 1rem;
+    }
+
+    .nav ul {
+        padding: 0;
+        gap: 15px;
+    }
+
+    .nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .carousel {
+        height: 300px;
+    }
+
+    .carousel-images img {
+        height: 300px;
+    }
+
+    .footer {
+        padding: 30px 0;
+    }
+
+    .container p {
+        font-size: 0.8rem;
     }
 }
