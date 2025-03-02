@@ -1,0 +1,228 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fdfdfd;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6f5f3;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 2rem;
+}
+
+/* Logo Container (First Line) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and text */
+    margin-bottom: 10px; /* Space between logo and nav */
+}
+
+.logo-container img {
+    height: 50px; /* Adjust logo size */
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-container h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* Navigation Bar (Second Line) */
+.nav {
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav ul li {
+    display: inline-block;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: gray;
+    font-size: 1rem;
+    padding: 5px 10px;
+}
+
+.nav ul li a:hover {
+    color: #6f5eff;
+}
+
+
+/* Main Content */
+.main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 120px; /* Adjust padding to avoid overlap with the fixed header */
+}
+
+/* Centered Carousel */
+.carousel {
+    position: relative;
+    width: 1200px;
+    height: 600px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* Ensure it fits all images */
+}
+
+.carousel-images img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Navigation Buttons */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Footer */
+.footer {
+    background-color: #f9f9f9; /* Keeping the original background color */
+    color: #333; /* Dark text for readability */
+    padding: 60px 0; /* Increased padding for more space */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elegant font */
+    text-align: center;
+    margin-top: auto;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for a lifted look */
+}
+
+/* Footer Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* About Us Section */
+.container h4 {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333; /* Dark text for headings */
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Spacing between letters for a stylish look */
+}
+
+.container p {
+    font-size: 0.8rem;
+    line-height: 1.8;
+    color: #555; /* Slightly lighter gray text for paragraph */
+    margin-bottom: 30px;
+}
+
+/* Footer Navigation Links */
+.nav ul li a {
+    font-size: 1rem;
+    color: #555; /* Lighter gray for links */
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px; /* Rounded corners for a soft feel */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav ul li a:hover {
+    color: #fff; /* Text color on hover */
+    background-color: #6f5eff; /* Subtle background change on hover */
+}
+
+/* Footer Social Media Links */
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media a {
+    font-size: 1.5rem;
+    color: #555;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #6f5eff; /* Hover effect for social media icons */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0;
+    }
+    .container {
+        padding: 0 10px;
+    }
+    .container h4 {
+        font-size: 1.2rem;
+    }
+    .container p {
+        font-size: 0.9rem;
+    }
+}
